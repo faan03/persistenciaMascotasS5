@@ -1,9 +1,12 @@
 package com.faan.mascotasrecyclerviewyactionview;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 import java.util.ArrayList;
 
@@ -15,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toolbar miActionBar = (Toolbar) findViewById(R.id.miActionBar);
+        setSupportActionBar(miActionBar);
 
        listaMascotas = (RecyclerView) findViewById(R.id.rvMascotas);
         LinearLayoutManager llm = new LinearLayoutManager(this);
@@ -37,4 +42,10 @@ public class MainActivity extends AppCompatActivity {
         mascotas.add(new Mascota("Tux","5", R.drawable.tux));
 
     }
+
+    public void iraCincoMascotas (View v){
+        Intent i = new Intent(this,cincoMascotas.class);
+        startActivity(i);
+    }
+
 }

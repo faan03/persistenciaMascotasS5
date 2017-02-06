@@ -12,8 +12,8 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             >
-            <ImageButton
-                android:id="@+id/btnRaitear"
+            <ImageView
+                android:id="@+id/imgFoto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/mascota1"
@@ -23,7 +23,8 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 >
-                <ImageView
+                <ImageButton
+                    android:id="@+id/btnRaitear"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/bone1"
