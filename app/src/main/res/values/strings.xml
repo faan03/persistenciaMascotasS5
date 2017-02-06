@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Mascotas, Recycler View y Action View</string>
+    <string name="pnombre"> Nombre </string>
+    <string name="praiting"> Raiting </string>
 </resources>
