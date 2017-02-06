@@ -1,5 +1,6 @@
 package com.faan.mascotasrecyclerviewyactionview;
 
+import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.LayoutInflater;
@@ -18,11 +19,14 @@ import java.util.ArrayList;
 
 public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.MascotaViewHolder> {
 
-    public MascotaAdaptador (ArrayList <Mascota> mascotas){
+    public MascotaAdaptador (ArrayList <Mascota> mascotas, Activity activity){
         this.mascotas=mascotas;
+        this.activity= activity;
+
     }
 
      ArrayList <Mascota> mascotas;
+    private Activity activity;
     @Override
     //inflar el layout y lo pasa al viewholder para que obtenga los view
     public MascotaViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -42,7 +46,8 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
         mascotaViewHolder.btnRaitear.setOnClickListener(new View.OnClickListener(){
             @Override
             public  void  onClick(View v) {
-             //   Toast.makeText(activity ,"Diste un Raiting a " , Toast.LENGTH_SHORT ).show();
+                Toast.makeText(activity ,"Diste un Like a  " + mascota.getNombreMascota(), Toast.LENGTH_SHORT ).show();
+
             }
         });
 
