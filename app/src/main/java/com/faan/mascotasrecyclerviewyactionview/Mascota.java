@@ -6,10 +6,10 @@ package com.faan.mascotasrecyclerviewyactionview;
 
 public class Mascota {
     private String nombreMascota;
-    private String  raitingMascota;
+    private int  raitingMascota;
     private int  fotoMascota;
 
-    public Mascota (String nombre, String raiting, int foto){
+    public Mascota (String nombre, int raiting, int foto){
         this.nombreMascota= nombre;
         this.raitingMascota=raiting;
         this.fotoMascota=foto;
@@ -23,11 +23,11 @@ public class Mascota {
         this.nombreMascota = nombreMascota;
     }
 
-    public String getRaitingMascota() {
+    public int getRaitingMascota() {
         return raitingMascota;
     }
 
-    public void setRaitingMascota(String raitingMascota) {
+    public void setRaitingMascota(int raitingMascota) {
         this.raitingMascota = raitingMascota;
     }
 
@@ -38,4 +38,10 @@ public class Mascota {
     public void setFotoMascota(int fotoMascota) {
         this.fotoMascota = fotoMascota;
     }
+
+    public void puntuar (){
+        this.raitingMascota ++;
+    }
 }
+
+

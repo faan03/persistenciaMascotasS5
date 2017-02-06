@@ -40,16 +40,18 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
         final Mascota mascota = mascotas.get(position);
         mascotaViewHolder.imgFoto.setImageResource(mascota.getFotoMascota());
         mascotaViewHolder.tvNombreCV.setText(mascota.getNombreMascota());
-        mascotaViewHolder.tvRaitingCV.setText(mascota.getRaitingMascota());
+        mascotaViewHolder.tvRaitingCV.setText(String.valueOf(mascota.getRaitingMascota()));
 
 
         mascotaViewHolder.btnRaitear.setOnClickListener(new View.OnClickListener(){
             @Override
             public  void  onClick(View v) {
+                mascota.puntuar();
                 Toast.makeText(activity ,"Diste un Like a  " + mascota.getNombreMascota(), Toast.LENGTH_SHORT ).show();
 
             }
         });
+        mascotaViewHolder.tvRaitingCV.setText(String.valueOf(mascota.getRaitingMascota()));
 
     }
 
