@@ -5,8 +5,10 @@ import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -31,10 +33,19 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
     @Override
     // asocia cada elemento de la lista con cada view
     public void onBindViewHolder(MascotaViewHolder mascotaViewHolder, int position) {
-        Mascota mascota = mascotas.get(position);
+        final Mascota mascota = mascotas.get(position);
         mascotaViewHolder.imgFoto.setImageResource(mascota.getFotoMascota());
         mascotaViewHolder.tvNombreCV.setText(mascota.getNombreMascota());
-      mascotaViewHolder.tvRaitingCV.setText(mascota.getRaitingMascota());
+        mascotaViewHolder.tvRaitingCV.setText(mascota.getRaitingMascota());
+
+
+        mascotaViewHolder.btnRaitear.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public  void  onClick(View v) {
+             //   Toast.makeText(activity ,"Diste un Raiting a " , Toast.LENGTH_SHORT ).show();
+            }
+        });
+
     }
 
     @Override
@@ -46,14 +57,18 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
         private ImageView imgFoto;
         private TextView tvNombreCV;
         private TextView tvRaitingCV;
+        private ImageButton btnRaitear;
 
         public MascotaViewHolder(View itemView) {
             super(itemView);
-            imgFoto     = (ImageView) itemView.findViewById(R.id.imgFoto);
-            tvNombreCV  = (TextView) itemView.findViewById(R.id.tvNombreCV);
-            tvRaitingCV = (TextView) itemView.findViewById(R.id.tvRaitingCV);
+            imgFoto     = (ImageView)   itemView.findViewById(R.id.imgFoto);
+            tvNombreCV  = (TextView)    itemView.findViewById(R.id.tvNombreCV);
+            tvRaitingCV = (TextView)    itemView.findViewById(R.id.tvRaitingCV);
+            btnRaitear  = (ImageButton) itemView.findViewById(R.id.btnRaitear);
         }
     }
+
+
 
 
 }
