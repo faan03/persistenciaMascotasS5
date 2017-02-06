@@ -36,7 +36,7 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
 
     @Override
     // asocia cada elemento de la lista con cada view
-    public void onBindViewHolder(MascotaViewHolder mascotaViewHolder, int position) {
+    public void onBindViewHolder(final MascotaViewHolder mascotaViewHolder, int position) {
         final Mascota mascota = mascotas.get(position);
         mascotaViewHolder.imgFoto.setImageResource(mascota.getFotoMascota());
         mascotaViewHolder.tvNombreCV.setText(mascota.getNombreMascota());
@@ -47,11 +47,11 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
             @Override
             public  void  onClick(View v) {
                 mascota.puntuar();
+                mascotaViewHolder.tvRaitingCV.setText(String.valueOf(mascota.getRaitingMascota()));
                 Toast.makeText(activity ,"Diste un Like a  " + mascota.getNombreMascota(), Toast.LENGTH_SHORT ).show();
-
             }
         });
-        mascotaViewHolder.tvRaitingCV.setText(String.valueOf(mascota.getRaitingMascota()));
+
 
     }
 
