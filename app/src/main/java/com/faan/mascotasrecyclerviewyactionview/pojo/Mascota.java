@@ -1,4 +1,4 @@
-package com.faan.mascotasrecyclerviewyactionview;
+package com.faan.mascotasrecyclerviewyactionview.pojo;
 
 /**
  * Created by FAAN on 05/02/2017.
